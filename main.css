@@ -1,0 +1,10 @@
+.container h2 {
+    display: flex;
+    justify-content: center;
+    padding: 18px;
+    width: 100%;
+}
+
+form button {
+    margin-top: 20px;
+}
