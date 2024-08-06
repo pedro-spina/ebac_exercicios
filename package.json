@@ -1,10 +1,20 @@
 {
+  "name": "exercicio_gulp",
+  "version": "1.0.0",
+  "description": "Um projeto de exemplo usando Gulp",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp",
+    "watch": "gulp watch"
+  },
   "devDependencies": {
-    "gulp": "^5.0.0",
-    "gulp-imagemin": "^9.1.0",
-    "gulp-rename": "^2.0.0",
-    "gulp-sass": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.0.0",
+    "gulp-imagemin": "^7.1.0",
     "gulp-uglify": "^3.0.2",
-    "sass": "^1.77.8"
-  }
+    "gulp-rename": "^2.0.0",
+    "sass": "^1.32.0"
+  },
+  "author": "Pedro Spina",
+  "license": "ISC"
 }
