@@ -1,0 +1,134 @@
+@import "variaveis.less";
+
+// Breakpoints para media queries
+@breakpointMobile: ~"(max-width: 767px)";
+@breakpointTablet: ~"(max-width: 1023px)";
+
+// Estilos Globais
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: @bodyColor;
+}
+
+li {
+    list-style: none;
+}
+
+// Estilos do Container
+.container {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+
+    // Media query para mobile
+    @media @breakpointMobile {
+        .products {
+            display: block;
+        }
+    
+        .product-item  {
+            margin-bottom: 32px;
+        }
+    }
+
+    // Media query para tablet
+    @media @breakpointTablet {
+        max-width: 80%;
+
+        .products {
+            grid-template-columns: repeat(2, 48.5%);
+            column-gap: 3%;
+        }
+    }
+}
+
+// Estilos do Header
+header {
+    background-color: @headerColor;
+    position: sticky;
+    top: 0;
+    left: 0;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 0;
+    }
+
+    .menu {
+        display: flex;
+
+        li {
+            font-weight: bold;
+            margin-left: 24px;
+
+            a {
+                color: @textColor;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+// Estilos da Section e Produtos
+section {
+    padding: 56px 0;
+
+    .products {
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: repeat(3, 32.66%);
+        column-gap: 1%;
+        row-gap: 4%;
+        width: 100%;
+
+        .product-item {
+            img {
+                width: 100%;
+                border-radius: 16px;
+            }
+
+            h4 {
+                margin-top: 16px;
+                font-weight: bold;
+                font-size: 1.2em;
+            }
+
+            p {
+                margin-top: 8px;
+                font-size: 0.9em;
+                color: darken(@bodyColor, 40%);
+            }
+        }
+
+        .product-button {
+            display: block;
+            background-color: @buttonColor;
+            color: @textColor;
+            text-align: center;
+            padding: 8px 0;
+            border-radius: 8px;
+            margin-top: 8px;
+            text-decoration: none;
+
+            &:hover {
+                background-color: darken(@buttonColor, 10%);
+            }
+        }
+    }
+}
+
+// Estilos do Footer (caso queira adicionar um)
+footer {
+    background-color: @headerColor;
+    color: @textColor;
+    text-align: center;
+    padding: 16px 0;
+}
