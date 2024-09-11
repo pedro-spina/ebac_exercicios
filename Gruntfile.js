@@ -30,7 +30,7 @@ module.exports = function(grunt) {
         replace: {
             dev: {
                 options: {
-                    patters: [
+                    patterns: [ // Corrigido de "patters" para "patterns"
                         {
                             match: 'ENDERECO_DO_CSS',
                             replacement: './styles/main.css'
@@ -52,7 +52,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 options: {
-                    patters: [
+                    patterns: [ // Corrigido de "patters" para "patterns"
                         {
                             match: 'ENDERECO_DO_CSS',
                             replacement: './styles/main.min.css'
@@ -85,15 +85,15 @@ module.exports = function(grunt) {
             }
         },
         clean: ['prebuild'],
-    // Minificar JavaScript
-    uglify: {
-        build: {
-            files: {
-                'dist/scripts/main.min.js': 'src/scripts/main.js' // Minifica todos os JS na pasta src/js
+        // Minificar JavaScript
+        uglify: {
+            build: {
+                files: {
+                    'dist/scripts/main.min.js': 'src/scripts/main.js' // Minifica todos os JS na pasta src/js
+                }
             }
         }
-    }
-    })
+    });
 
     // Carregar os plugins das tarefas
     grunt.loadNpmTasks('grunt-contrib-less');
@@ -106,5 +106,5 @@ module.exports = function(grunt) {
 
     // Definir as tarefas que serão executadas quando rodar o Grunt
     grunt.registerTask('default', ['watch', 'less', 'uglify']);
-    grunt.registerTask('build', ['less:production', 'htmlmin:dist', 'replace:dist', 'clean']);
-}
+    grunt.registerTask('build', ['less:production', 'htmlmin:dist', 'replace:dist', 'uglify', 'clean']);
+};
